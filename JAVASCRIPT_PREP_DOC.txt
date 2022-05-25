@@ -1,0 +1,524 @@
+
+
+#1. Datatypes in javascript : 
+ 	A. Primitive Datatypes also called immutable: This are immutable beacause there values cannot change if we declared them with const
+ 		String, Number, Bigint, Boolean, undefined, null, symbol
+ 	- A primitive value is a value that has no properties or methods.
+
+ 	B. Non Primitive Datatypes also called mutable: If we declared array or object with const still values can be changed so they are mutable
+ 		Object, Array
+
+#2. What is Hoisting : 
+	Hoisting is a default behaviour of javascript where all the variable and function declarations are moved on top.
+
+	Cases1: 
+	 	    helloWorld();  // prints 'Hello World!' to the console
+			function helloWorld(){
+			  console.log('Hello World!');
+			}
+	Cases2:
+			helloWorld();  // TypeError: helloWorld is not a function
+			var helloWorld = function(){
+			  console.log('Hello World!');
+			}
+			This code won’t work. Only function declarations are hoisted in JavaScript, function expressions are not hoisted
+
+#3. Explain Implicit Type Coercion in javascript
+	Implicit type coercion in javascript is automatic conversion of value from one data type to another. It takes place when the operands of an expression are of different data types
+
+	1. String coercion : 
+	 	String coercion takes place while using the ‘ + ‘ operator. When a number is added to a string, the number type is always converted to the string type.
+		 EG. var x = 24;
+			 var y = "Hello";
+			 x + y   // Returns "24Hello";
+	2. Boolean Coercion
+		Boolean coercion takes place when using logical operators, ternary operators, if statements and loop checks. To understand boolean coercion in if statements and operators, we need to understand truthy and falsy values.
+		Truthy values are those which will be converted (coerced) to true . Falsy values are those which will be converted to false .
+		EG. var x = 0;
+			var y = 23;
+        	if(x) { console.log(x) }   // The code inside this block will not run since the value of x is 0(Falsy)  
+			if(y) { console.log(y) }    // The code inside this block will run since the value of y is 23 (Truthy)
+	
+#4. Is javascript a statically typed or a dynamically typed language?
+	JavaScript is a dynamically typed language. In a dynamically typed language, the type of a variable is checked during run-time in contrast to statically typed language, where the type of a variable is checked during compile-time.
+	EG. var a = 23;
+		var a = "Hello World!"; // Here variable a is converted from number to string
+
+#5. Explain passed by value and passed by reference
+	In JavaScript, primitive data types are passed by value and non-primitive data types are passed by reference.
+
+#6. What is an Immediately Invoked Function in JavaScript?
+	An Immediately Invoked Function ( known as IIFE and pronounced as IIFY) is a function that runs as soon as it is defined.
+	 IIFE (spell - if ee's) :
+   		- Immedialty invoke function expressions
+   		->> ( function foo(){
+    		console.log("IN IIFE");
+   			})();
+   This functions immediately executes
+
+#7. Explain Higher Order Functions in javascript.
+	Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions.
+	EG. function higherOrder(fn) { // Higher order function
+  		    fn(); // Lower order function
+		} 
+		higherOrder(function() { console.log("Hello world") }); 
+
+#8. Explain “this” keyword
+	The “this” keyword refers to the object that the function is a property of.
+	The value of “this” keyword will always depend on the object that is invoking the function.
+
+	- Default binding : 
+	    console.log(this) - This will print the windows object which as the global objects
+   
+   	- Implicit binding :
+	   Implicit Binding is applied when you invoke a function in an Object using the dot notation. this in such scenarios will point to the object using which the function was invoked. Or simply the object on the left side of the dot.
+	   EG:
+		var obj={
+			name: "charan",
+			sirname(param){
+			console.log(this.name, param)      
+			}
+		}
+		obj.sirname('chilka');
+
+	- Explicit function :
+	   1) Call() : 
+	   		It’s a predefined method in javascript.
+			This method invokes a method (function) by specifying the owner object.
+			EG: 
+				function sayHello(){
+  					return "Hello " + this.name;
+				}
+				var obj = {name: "Sandy"};
+				sayHello.call(obj);
+				// Returns "Hello Sandy"
+
+		2) Apply() : 	
+			The apply method is similar to the call() method. The only difference is that,
+			call() method takes arguments separately whereas, apply() method takes arguments as an array.
+			EG.
+				function saySomething(message){
+				return this.name + " is " + message;
+				}	
+				var person4 = {name:  "John"};						
+				saySomething.apply(person4, ["awesome"]);
+
+		3. bind() : 
+			This method returns a new function, where the value of “this” skeyword will be bound to the owner object, which is provided as a parameter.
+			EG.
+			var bikeDetails = {
+				displayDetails: function(registrationNumber,brandName){
+				return this.name+ " , "+ "bike details: "+ registrationNumber + " , " + brandName;
+				}
+			}	
+			var person1 = {name:  "Vivek"};					
+			var detailsOfPerson1 = bikeDetails.displayDetails.bind(person1, "TS0122", "Bullet");					
+			// Binds the displayDetails function to the person1 object										
+			detailsOfPerson1();
+			// Returns Vivek, bike details: TS0452, Thunderbird
+
+#9. What is currying in JavaScript?
+	Currying is an advanced technique to transform a function of arguments n, to n functions of one or less arguments.
+	EG. function add (a) {
+		return function(b){
+			return a + b;
+			}
+		}
+		add(3)(4)
+
+#10. Explain Scope in javascript.
+	 There are three types of scopes in JS:
+	1. Global Scope 
+	2. Local or Function Scope - var
+	3. Block Scope - let, const
+
+#11. Explain Closures in JavaScript
+	Closures is an ability of a function to remember the variables and functions that are declared in its outer scope.
+	Closure is when a functions remebers the variables outside of it. Even if you pass that function elsewhere
+	Closure means that an inner function always has access to the vars and parameters of its outer function, even after the outer function has returned.
+	EG: 
+		function foo(parameter){
+		  settimeout({
+		   console.log(parameter);
+		  },1000)
+		}
+		foo("This is parameter");		
+		O/P: This is parameter
+
+#12. What are object prototypes?
+	All JavaScript objects inherit properties and methods from a prototype
+	For example,
+	Date objects inherit properties from the Date prototype	
+	Math objects inherit properties from the Math prototype
+	Array objects inherit properties from the Array prototype.
+	-- The Object.prototype is on the top of the prototype inheritance chain. 
+	-- Every prototype inherits properties and methods from the Object.prototype.
+	-- Date objects, Array objects, and Person objects inherit from Object.prototype
+	-- The Javascript prototype property allows you to add both new property and new methods to object constructor
+	EG. 		
+		function Person(first, last) {
+			  this.firstName = first;
+			  this.lastName = last;
+			}
+
+			Person.prototype.nationality = "Indian";
+
+			var somePerson = new Person('charan', 'chilka');
+			console.log(person) // {name: 'charan',lastname:'chilka',nationality:'Indian'}
+
+#13. What is memoization?
+	Memoization is a form of caching where the return value of a function is cached based on its parameters. If the parameter of that function is not changed, the cached version of the function is returned.
+	EG. 
+		function addTo256(num){
+			return num + 256;
+		}
+		addTo256(20); // Returns 276
+		addTo256(40); // Returns 296
+		addTo256(20); // Returns 276
+	
+	When we are calling the function addTo256 again with the same parameter (“20” in the case above), we are computing the result again for the same parameter.
+	Computing the result with the same parameter again and again is not a big deal in the above case, but imagine if the function does some heavy duty work, then, computing the result again and again with the same parameter will lead to wastage of time.
+
+	This is where memoization comes in, by using memoization we can store(cache) the computed results based on the parameters. If the same parameter is used again while invoking the function, instead of computing the result, we directly return the stored (cached) value.
+
+#14. What is recursion in a programming language?
+	 Recursion is a technique to iterate over an operation by having a function call itself repeatedly until it arrives at a result.
+	EG. 
+		function add(number) {
+			if (number <= 0) {
+				return 0;
+			} else {
+				return number + add(number - 1);
+			}
+			}
+		add(3) => 3 + add(2)
+				3 + 2 + add(1)
+				3 + 2 + 1 + add(0)
+				3 + 2 + 1 + 0 = 6 
+
+#15. What is the use of a constructor function in javascript?
+	Constructor functions are used to create objects in javascript.
+	When do we use constructor functions?
+	If we want to create multiple objects having similar properties and methods, constructor functions are used.
+	Note- Name of a constructor function should always be written in Pascal Notation: every word should start with a capital letter.
+	EG.
+		function Person(name,age,gender){
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+		}
+		var person1 = new Person("Vivek", 76, "male");
+		console.log(person1);
+		var person2 = new Person("Courtney", 34, "female");
+		console.log(person2);
+
+#16. What is DOM?
+	DOM stands for Document Object Model.
+	DOM is a programming interface for HTML and XML documents.
+	When the browser tries to render a HTML document, it creates an object based on the HTML document called DOM. Using this DOM, we can manipulate or change various elements inside the HTML document.
+
+#17. What are classes in javascript?
+        class workshop{
+		  constructor(teacher){
+			this.teacher = teacher
+		  }
+		  ask(question){
+			console.log(this.teacher, question)
+		  }
+		}
+
+		var deepjs = new workshop('charan');
+		deepjs.ask("hello there")
+
+#18. What are generator functions?
+	They can be stopped midway and then continue from where it had stopped.
+	Generator functions are declared with the function* keyword instead of the normal function keyword:
+
+	function* genFunc(){
+	yield 3;
+	yield 4;
+	}
+	genFunc().next();
+
+#19. Explain WeakSet in javascript.
+	In javascript, Set is a collection of unique and ordered elements.
+	Just like Set, WeakSet is also a collection of unique and ordered elements with some key differences:
+	Weakset contains only objects and no other type.
+	An object inside the weakset is referenced weakly. This means, if the object inside the weakset does not have a reference, it will be garbage collected.
+	Unlike Set, WeakSet only has three methods, add() , delete() and has().
+
+#20. undefined vs null 
+	 - undefined means variable declared but not assigned any value
+	 - null means variable has assigned null representation of n value
+
+#21. typeof()
+		- typeof() is a unary operator i.e accept single value
+		In JavaScript there are 5 different data types that can contain values:
+		    string
+		    number
+		    boolean
+		    object
+		    function
+		There are 6 types of objects:
+		    Object
+		    Date
+		    Array
+		    String
+		    Number
+		    Boolean
+
+		And 2 data types that cannot contain values:		
+		    null
+		    undefined
+
+	The typeof Operator:-
+
+	    typeof "John"                 // Returns "string"
+		typeof 3.14                   // Returns "number"
+		typeof NaN                    // Returns "number"
+		typeof false                  // Returns "boolean"
+		typeof [1,2,3,4]              // Returns "object"
+		typeof {name:'John', age:34}  // Returns "object"
+		typeof new Date()             // Returns "object"
+		typeof function () {}         // Returns "function"
+		typeof myCar                  // Returns "undefined" *
+		typeof null                   // Returns "object" 
+
+#22. instaceof()
+	 - binary operator i.e take 2 values
+	 - works only with non primitive types because it checks for the object constructor
+
+	 EG. 
+	 	var b = String('charan');
+		console.log(b instanceof String) // false 
+	 	var a = new String('charan');
+		console.log(a instanceof String) // true // beacuse the new String() returns an object
+
+#23. Different variable declaration in javascript?
+	- var
+	- let 
+	- const
+
+#24. What is a Lexical Environment?
+	A lexical environment is a data structure that holds identifier-variable mapping. (here identifier refers to the name of variables/functions, and the variable is the reference to actual object [including function object] or primitive value).
+
+	This is what a lexical environment conceptually look like:
+	LexicalEnvironment = {
+	  Identifier:  <value>,
+	  Identifier:  <function object>
+	}
+
+#25. What is Execution Context?
+	 Simply put, an execution context is an abstract concept of an environment where the Javascript code is evaluated and executed. Whenever any code is run in JavaScript, it’s run inside an execution context.
+
+#25. Constructor in javascript.
+     - Blue print to create multiple similar objects
+     EG. 
+     	function Person(name, age){
+     		this.name = name;
+     		this.age = age;
+     	}
+
+     	var somePerson = new Person('charan', '27') // will print Person{name: 'charan', age:27}
+
+     Built In Javascript Constructors: 
+      	new String()    // A new String object
+		new Number()    // A new Number object
+		new Boolean()   // A new Boolean object
+		new Object()    // A new Object object
+		new Array()     // A new Array object
+		new RegExp()    // A new RegExp object
+		new Function()  // A new Function object
+		new Date()      // A new Date object
+
+#26. Maps in javascript? (Notes: This is a different topic which is not related to map loop function);
+	 A Map holds key-value pairs where the keys can be any datatype.
+	 A Map remembers the original insertion order of the keys.
+	 A Map has a property that represents the size of the map.
+	 EG. 
+	 	const fruits = new Map([
+		  ["apples", 500],
+		  ["bananas", 300],
+		  ["oranges", 200]
+		]);
+		console.log(fruits.get('apples'))  // 500
+
+		typeof fruits; // BTW this will return object not array as all instance of and object starting with new are objects
+
+#27. Object References in Javascript
+	    Create object with an existing object as prototype
+		Object.create()
+
+		// Adding or changing an object property
+		Object.defineProperty(object, property, descriptor)
+
+		// Adding or changing object properties
+		Object.defineProperties(object, descriptors)
+
+		// Accessing Properties
+		Object.getOwnPropertyDescriptor(object, property)
+
+		// Returns all properties as an array
+		Object.getOwnPropertyNames(object)
+
+		// Accessing the prototype
+		Object.getPrototypeOf(object)
+
+		// Returns enumerable properties as an array
+		Object.keys(object)
+
+#28. Execution Context.
+	- When our function get called, we create a live store data (local memory, variable enviornment, state) for that functions excution context.
+	- When function execution completed its local memory gets deleted(except the return value)
+
+#29. Memory leak in javascript
+
+	EG: 
+		function outerFunc(){
+
+			let counter = 0;
+			let leak_variable = 1;    // Here this variable is an example of memory leak, 
+									  // As this variable gets memorized but cannot be accessed 
+
+			function innerFunction(){
+			 return counter++;
+			}
+
+			return innerFunction;
+		}
+
+		const call_function = outerFunc();
+		console.log(call_function())  // 0 // We cannot access leak_variable here.
+		console.log(call_function())  // 1
+		
+ #30. Deep Cloning and Shallow Cloning
+ -  Shallow Cloning : 
+       let a = {}
+
+#31. All ES6 features
+
+#32 Arrow function :
+    Arrow functions do not have their own this. They are not well suited for defining object methods.
+
+	Arrow functions are not hoisted. They must be defined before they are used.
+
+	Using const is safer than using var, because a function expression is always a constant value.
+
+	You can only omit the return keyword and the curly brackets if the function is a single statement. Because of this, it might be a good habit to always keep them
+
+Closure : 
+	- Enables Powerful pro-level functions like 'once' and 'memoize'
+
+-- To delete a property
+    var x = {a:10,b,20,c:30}
+    delete x.a or delete x[a] // {b,20,c:30}
+
+-- To print to and html element
+	 <p id="demo"></p>
+	 document.getElementById("demo").innerHTML = "Hello World";
+
+-- Getter 
+	const person = {
+  	language: "hindi",
+  	get lang() {
+    	return this.language.toUpperCase();
+  		}
+	};
+	document.getElementById("demo").innerHTML = person.lang;
+
+-- Setter 
+	const person = {
+	  language: "",
+	  set lang(lang) {
+	    this.language = lang.toUpperCase();
+	  }
+	};
+	person.lang = "en";
+	document.getElementById("demo").innerHTML = person.language;
+
+-- To Iterate String use for..of
+	for (const x of "W3Schools") {
+  		// code block to be executed
+	}
+
+-- Sets
+	const letters = new Set(["a","b","c"]);
+	This will create a unique array if you pass duplicate values thoes values will get omitted
+	EG. const letters = new Set(["a","b","c","d","a","b"]);
+	    console.log(letters, letters.size)  // ["a","b","c","d"]
+
+-- deep Cloning: 
+	var items = {
+    b: 5,
+    c: function sum() { return 1 + 2 },
+    d: {
+        r: 50,
+        e: function add() { return 5 + 8 },
+        p: {
+            ab: 70
+        }
+    },
+    e: "",
+    f: [1, 2, 3, 4, function mul(){return 2*2}],
+    h: null
+	}
+
+	var new_obj = clone(items);
+	new_obj.d.r = 10;
+	new_obj.b = 9;
+	new_obj.d.p.ab = 200
+
+	console.log(items)
+	console.log(new_obj)
+
+	function clone(items) {
+		var result = {}
+		for (var key in items) {
+			if (items.hasOwnProperty(key)) {
+				if (typeof (items[key]) == 'object') {
+					if (items[key] == null) {
+						result[key] = items[key]
+					} else {
+						if (Object.prototype.toString.call(items[key]).toString() === "[object Array]") {
+							let arr = [];
+							for (let i = 0; i < items[key].length; i++) {
+								arr.push(items[key][i])
+							}
+							result[key] = arr;
+						} else {
+							var clone_objs = clone(items[key])
+							result[key] = clone_objs;
+						}
+					}
+				} else {
+					result[key] = items[key]
+				}
+			}
+		}
+		return result;
+	}
+
+
+# Tricky questions
+
+console.log(a);        // ReferenceError: a is not defined
+let a = 3;     
+
+console.log(a);       // undefined
+var a = 3;   
+here let are const will remain unintialize
+-------------------------------------------------------------
+var add = (function() {
+    var counter = 0;
+    return function() {
+    return ++counter
+    };
+})();
+console.log(add()); //1
+console.log(add()); //2
+console.log(add()); //3
+-------------------------------------------------------------
+
+# Anonymous function vs Named function
+var map_function = array.map(element=>{ return}) // This is Anonymous function
+var map_function = array.map(function getIds(element){return}) // This is Named function

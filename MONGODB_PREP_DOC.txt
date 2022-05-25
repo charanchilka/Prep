@@ -1,0 +1,31 @@
+1) Explain what is MongoDB?
+Mongo-DB is a document database which provides high performance, high availability and easy scalability.
+
+2) What is “Namespace” in MongoDB?
+MongoDB stores BSON (Binary Interchange and Structure Object Notation) objects in the collection. 
+The concatenation of the collection name and database name is called a namespace.
+
+3) What is sharding?
+Sharding is a method for distributing data across multiple machines. 
+MongoDB uses sharding to support deployments with very large data sets and high throughput operations.
+
+4)What are the features of mongodb?
+ 1)Flexible data model in form of documents
+ 2)high performance high scalability
+ 3)faster than traditional database
+
+5) Explain what is a replica set?
+A replica set is a group of mongo instances that host the same data set. In replica set, one node is primary, and another is secondary. From primary to the secondary node all data replicates.
+
+6) How replication works in MongoDB?
+Across multiple servers, the process of synchronizing data is known as replication. It provides redundancy and increase data availability with multiple copies of data on different database server. Replication helps in protecting the database from the loss of a single server.
+
+7)To do safe backups what is the feature in MongoDB that you can use?
+journaling is the feature in monogobd to do safe backups
+
+8)Mention what is Objecld composed of?
+ objectid is composed of 
+  1)Timestamp
+  2)client machine id
+  3)client process id
+  4)3 byte incremented counter

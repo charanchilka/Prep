@@ -1,0 +1,91 @@
+
+
+#1. What is Nodejs 
+    Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser.
+    It is not a framework, rather it is a server side application.
+    It uses google V8 engine.
+    Nodejs is a single threaded and highly scalable system, non I/O blocking and event driven.
+ 
+#2. What is Event Loop ***
+    The event loop is what allows nodejs to perform non-blocking I/O operations — despite the fact that JavaScript is single-threaded — by offloading operations to the system kernel whenever possible
+ 
+#3. What is NMP
+    Node Package Manager
+    World's Largest Software Registry
+    NPM is package manager for javascript
+
+#4. What is REPL
+    REPL stands for Read Eval Print Loop
+    To start working with the REPL environment of NODE; open up the terminal (in case of UNIX/LINUX) or the Command prompt (in case of Windows) and write node and press ‘enter’ to start the REPL.
+
+#5. Difference Between Asynchronous and Synchronous
+    1. Asynchronous -  An asynchronous model allows multiple things to happen at the same time.
+    2. Synchronous - In a synchronous programming model, things happen one at a time
+.
+#6. What is Libuv
+    Libuv - Unicorn Velociraptor Library 
+    It is a multi-platform C library that provides support for asynchronous I/O based on event loops.
+    It is primarily designed for use in Node.js.
+
+#7. What is package.json file
+    package.json is a plain JSON text file which contains all metadata information about Node JS Project or application.
+    Every Node JS Package or Module should have this file in the root directory to describe its metadata in plain JSON Object format.
+    Package.json file contains two mandatory directives
+            -  name
+            -  version
+
+#8. Why is Package.json file name is ‘package’
+    Because the Node JS platform manages every feature as a separate component. That component is also known as “Package” or “Module”.
+
+#9. What is Callback?
+    Callback is an asynchronous equivalent for a function. A callback function is called at the completion of a given task. Node makes heavy use of callbacks. All the APIs of Node are written in such a way that they support callbacks
+    A callback is a function which is called when a task is completed, thus helps in preventing any kind of blocking and a callback function allows other code to run in the meantime
+
+#10.  What is callback hell?
+    This is a big issue caused by coding with complex nested callbacks. Here, each and every callback takes an argument that is a result of the previous callbacks. In this manner, The code structure looks like a pyramid, making it difficult to read and maintain. Also, if there is an error in one function, then all other functions get affected. 
+
+#11. How to avoid callback hell?
+    Write modularized code (split code into smaller functions)
+    Use Promises
+    Use Async/Await
+    Reference : https://www.freecodecamp.org/news/how-to-deal-with-nested-callbacks-and-avoid-callback-hell-1bc8dc4a2012/
+
+#12. What is the Build tool used for?
+    To optimize code
+
+#13. What are the benefits of using Node.js
+    Aynchronous and Event Driven - All APIs of Node.js library are aynchronous that are non-blocking. It essentially means a Node.js based server never waits for an API to return data. Server moves to the next API after calling it and a notification mechanism of Events of Node.js helps server to get response from the previous API call.
+    Very Fast - Being built on Google Chrome's V8 JavaScript Engine, Node.js library is very fast in code execution.
+    Single Threaded but highly Scalable - Node.js uses a single threaded model with event looping. Event mechanism helps server to respond in a non-bloking ways and makes server highly scalable as opposed to traditional servers which create limited threads to handle requests. Node.js uses a single threaded program and same program can services much larger number of requests than traditional server like Apache HTTP Server.
+    No Buffering - Node.js applications never buffer any data. These applications simply output the data in chunks.
+
+#14. What is an error-first callback
+    Error-first callbacks are used to pass errors and data. The first argument is always an error object that the programmer has to check if something went wrong. Additional arguments are used to pass data.
+    fs.readFile(filePath, function(err, data) {
+    if (err) {
+        //handle the error
+    }
+    // use the data object
+    });
+
+
+#15. If Node.js is single threaded then how it handles concurrency?
+    Node provides a single thread to programmers so that code can be written easily and without bottleneck. Node internally uses multiple POSIX threads for various I/O operations such as File, DNS, Network calls etc.
+    When Node gets I/O request it creates or uses a thread to perform that I/O operation and once the operation is done, it pushes the result to the event queue. On each such event, event loop runs and checks the queue and if the execution stack of Node is empty then it adds the queue result to execution stack.
+
+#16. What is Event Emmitter?
+    All objects that emit events are members of EventEmitter class. These objects expose an eventEmitter.on() function that allows one or more functions to be attached to named events emitted by the object.
+    When the EventEmitter object emits an event, all of the functions attached to that specific event are called synchronously.
+    const EventEmitter = require('events');
+    class MyEmitter extends EventEmitter {}
+    const myEmitter = new MyEmitter();
+    myEmitter.on('event', () => {
+    console.log('an event occurred!');
+    });
+    myEmitter.emit('event');
+ 
+#17. Explain what is Reactor Pattern in Node.js?
+    What is the difference between process.nextTick() and setImmediate()?
+ 
+ 
+ 

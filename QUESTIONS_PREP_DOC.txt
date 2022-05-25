@@ -1,0 +1,169 @@
+#GENERAL
+28. A question in Algorithm and Data Structure?
+29. What is CORS?
+30. What are design patterns?
+31. Diffrence between graphQL and Rest
+32. What is long polling?
+35. State the difference between linear search and binary search?
+36. Highlight the difference between Node.js, AJAX, and jQuery?
+37. Define Dependency Injection?
+38. Define Containerization.
+48. Which are the top DevOps tools? Which tools have you worked on?
+49. How does the Centralized Workflow work?
+55. What is Prototype pattern?
+56. What's the difference between a blue/green deployment and a rolling deployment?
+57. Could you explain the Gitflow workflow?
+58. What does MongoDB not being ACID compliant really mean?
+66. How TypeScript is optionally statically typed language? 
+67. What is ClickJacking? 
+68. What is Cross-Site Request Forgery?
+70. Just-in-Time (JiT) vs Ahead-of-Time (AoT) compilation. Explain the difference.
+72. How would you scale Node application?
+76. Servers dedicated for streaming.
+86. What is the difference between GET and POST?
+87. What is RESTful API and why it is used?
+88. What is defer?
+89. Explain defe between vertical scaling and horizontal scaling in the database.
+102. What is lazy loading?
+109. patterns and anti-patterns related to microservice
+110. Learn how to think in terms of breaking a Monolith into smaller and smaller parts (https://www.nginx.com/blog/introduction-to-microservices/)
+
+#JAVASCRIPT
+4. When does javascript compile? What might slow it down?
+5. What is a callback? What is the advantage? Cons?
+6. What’s the difference between object literal and new?
+7. Why not just assign function to properties instead of protoype for an object?
+8. How do I implement modules natively in javascript?
+11. What are some common design patterns in OO Javascript?
+12. Difference between o = Object() vs o = new Object() ?
+21. What are some of the biggest limitations of javascript?
+26. Scope of variable in javascript.
+27. Classes in Javascript.
+34. Define Scope in Javascript?
+90. What is event bubbling and and capturing in javascript.
+91. What is Hoisting in javascript?
+95. How will you identitfy give input is array or object in javascript?
+96. What is javascript currying?
+97. How you can handle authentication in javascript?
+
+
+#NODEJS
+1. What are closures and how are they useful?
+2. When would I use closures (retention) over classes?
+3. What does ‘this’ refer to? What’s the deal with ‘self’?
+10. How do I deal with scope collisions (especially in Node)?
+13. How do promises work? What are the advantages over traditonal callbacks?
+17. How is ‘require’ implemented in Node?
+18. Expalin the role of middleware in Node?
+19. What’s the difference between call and apply?
+20. Why would you ever use call/apply?
+25. What are callbacks ? Why callbacks came into existence?
+33. What is REPL?
+50. How would you use a closure to create a private counter?
+52. What are the benefits of using Node.js? 
+61. What is a blocking code? 
+63. What's the event loop? 
+64. How does Node.js handle child threads? 
+65. When should I use EventEmitter?
+73. Explain some Error Handling approaches in Node.js you know about. Which one will you use?
+74. Why should you separate Express 'app' and 'server'?
+75. Justify when will we decide when To Use Node.Js and when not to use it
+77. When Node.js shouldn’t be used
+78. Is Node.Js wholly based on a single thread?
+79. Give a brief on the working mechanism of Node.Js
+80. What is an occasion circle in Node.js?
+81. How many types of Streams are present in Node.js?
+82. List and Explain the important REPL commands?
+83. Does Node.js support multi-core platforms? And is it capable of utilizing all the cores?
+84. Which is the first argument usually passed to a Node.js callback handler?
+85. What is chaining process in Node.js?
+92. How nodejs was built
+93. What is libuv?
+94. Diffrence between map() and set().
+104. What Is The Difference Of Using Var And Not Using Var In Repl While Dealing With Variables?
+105. How To Check The Already Installed Dependencies Which Are Globally Installed Using Npm?
+106. How Node Prevents Blocking Code?
+107. What is meant by event driven?
+108. Explain super keyword.
+
+#ANGULAR
+9. When is angular a bad option?
+14. What are the advantage of directives? What role do they play in MVC?
+15. How do I handle scope issues in angular (especially with lots of controllers)?
+22. What apps have you created in Node and How ? How much Angular did you use?
+23. Explain session and cookie in your code.
+24. How does session remember details of every member that logs in. Like thousand people open flipkart. Now what they choose, what they see is being stored. and also there cart. On code level how will you achieve it?
+40. What is the difference between Classes and Interfaces in TypeScript?
+41. Define “Decorators” in TypeScript?
+42. Define Cross-site Scripting (XSS)
+43. Define AOT and mention its benefits
+44. What is a Grid System in CSS?
+45. What is Routing Guard in Angular? 
+46. What is a service, and when will you use it?
+47. What is Inversion of Control?
+53. What is Redux and how does it relate to an Angular app?
+54. How is responsive design different from adaptive design?
+69. How would you overload a class constructor in TypeScript? 
+71. Do you know how you can run angularJS and angular side by side?
+
+#MONGODB
+39. What purpose do Indexes serve in MongoDB?
+51. Compare SQL databases and MongoDB at a high level.
+59. How do I perform the SQL JOIN equivalent in MongoDB? 
+60. How to query MongoDB with %like%?
+111. Where to use MongoDB.
+
+#REACT
+
+#TESTING
+16. Explain your process for testing? Framework? Which do you prefer? Why?
+
+#CODE CHALLENGES
+98. Reverse string without reversing special characters. str= ' abc$d@ef% ' The output should be: ' fed$c@ba% '
+99. Write a program to find no. of occurence of each character.
+100. Find the emojis on the string and give 2 whitespaces before and after.
+101.What is output of following code? 
+ for(var i =0; i < 8; ++i){ 
+     setTimeOut((i)=>{
+         console.log(i)
+         }, 100); 
+        } 
+  What will be the code look like if we want to print 1-7 in console?
+103. Sort a array containing only 0,1,2 in O(n) time complexity.
+
+
+https://dev.to/fullstackcafe/7-hardest-nodejs-interview-questions--answers-3lje
+https://www.fullstack.cafe/blog/7-hardest-nodejs-interview-questions-and-answers
+111. What is Reactor Pattern in Nodejs?
+112. What is LTS releases of Node.js why should you care?
+113. What is the difference between process.nextTick() and setImmediate()
+114. Rewrite the code sample without try/catch block
+115. What is the difference between git merge and git rebase?
+116. How do you find a list of files that have been changed in a particular commit?
+What is the process to revert a commit that has already has been pushed and made public?
+What is Denormalization in databases?
+What are some of the different types of indexes in SQL?
+What is the difference between the DELETE and TRUNCATE commands in SQL?
+What is a constraint in SQL?
+What is the difference between a Clustered and Non-Clustered Index?
+What is the fields option returns? in below code.
+connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
+  if (error) throw error;
+  console.log('The solution is: ', results[0].solution);
+});
+What are different middlewares in nodejs
+
+
+
+
+|---------------------------- URLS ----------------------------|
+
+1. https://www.upgrad.com/blog/mean-stack-developer-interview-questions-answers/   -->> 33+ questions
+2. https://www.fullstack.cafe/blog/top-60-mean-stack-interview-questions-and-answers   -->> 45+ questions
+3. https://mindmajix.com/mean-stack-interview-questions   -->. 75+ questions
+4. https://www.techbeamers.com/top-30-node-js-interview-questions-answers/   -->> 81+ questions
+
+
+|---------------------------- TO DOWNLOAD ----------------------------|
+1. https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/
+2. https://www.udemy.com/course/mongodb-the-complete-developers-guide/

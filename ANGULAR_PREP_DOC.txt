@@ -1,0 +1,20 @@
+
+#ANGULAR
+9. When is angular a bad option?
+14. What are the advantage of directives? What role do they play in MVC?
+15. How do I handle scope issues in angular (especially with lots of controllers)?
+22. What apps have you created in Node and How ? How much Angular did you use?
+23. Explain session and cookie in your code.
+24. How does session remember details of every member that logs in. Like thousand people open flipkart. Now what they choose, what they see is being stored. and also there cart. On code level how will you achieve it?
+40. What is the difference between Classes and Interfaces in TypeScript?
+41. Define “Decorators” in TypeScript?
+42. Define Cross-site Scripting (XSS)
+43. Define AOT and mention its benefits
+44. What is a Grid System in CSS?
+45. What is Routing Guard in Angular? 
+46. What is a service, and when will you use it?
+47. What is Inversion of Control?
+53. What is Redux and how does it relate to an Angular app?
+54. How is responsive design different from adaptive design?
+69. How would you overload a class constructor in TypeScript? 
+71. Do you know how you can run angularJS and angular side by side?
